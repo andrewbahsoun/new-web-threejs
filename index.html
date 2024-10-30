@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Homepage</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <button id="add-cube-button">Add Cube</button>
+    <div id="scroll-message" class="scroll-message">try adding a cube...</div>
+    <!-- Section: Welcome -->
+    <div id="bio" class="section">
+        <h4>Andrew Bahsoun</h4>
+        <p>Welcome to my homepage! Here, you'll learn about my skills, projects, and research interests.
+            This page is constantly under constuction, so check back for updates!
+        </p>
+        <img src="./images/file.png" alt="Descriptive Alt Text" class="bio-image">
+    </div>
+    
+    <!-- Section: About Me -->
+    <div id="about-me" class="section">
+        <h4>About Me</h4>
+        <p>I am a Junior Computer Science student at Chapman University, with an inquiry in Physics. I am a curious person dedicated to learning and trying new things. </p>
+    </div>
+
+    <!-- Section: Skills -->
+    <div id="skills" class="section">
+        <h4>Skills</h4>
+        <p>I am advanced in C++, Python, Java, and comfortable working with HTML/CSS, JavaScript, and SQL.
+            Check out some of my projects to see how i've used these skills!
+        </p>
+    </div>
+
+    <div id="projects" class="section">
+        <h2>Projects</h2>
+        <p>Take a look at my projects! I've worked on interactive websites, data visualizations, and 3D graphics.</p>
+        
+        <!-- Wrapper to control max width and center the container -->
+        <div class="projects-wrapper">
+            <!-- Horizontal scrolling container for project cards -->
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="card-inner">Project 1</div>
+                </div>
+                <div class="project-card">
+                    <div class="card-inner">Project 2</div>
+                </div>
+                <div class="project-card">
+                    <div class="card-inner">Project 3</div>
+                </div>
+                <div class="project-card">
+                    <div class="card-inner">Project 4</div>
+                </div>
+                <div class="project-card">
+                    <div class="card-inner">Project 5</div>
+                </div>
+                <div class="project-card">
+                    <div class="card-inner">Project 6</div>
+                </div>
+                <div class="project-card">
+                    <div class="card-inner">Project 7</div>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+    <!-- Section: Research -->
+    <div id="research" class="section">
+        <h4>Research</h4>
+        <p>My research focuses on immersive web experiences, leveraging 3D graphics to enhance user engagement.</p>
+    </div>
+
+    <!-- Section: Contact -->
+    <div id="contact" class="section">
+        <h4>Contact</h4>
+        <p>Interested in working together? Contact me. </p>
+        <p>
+            Email: bahsoun@chapman.edu 
+        </p>
+        <p>
+            LinkedIn: <a href="https://www.linkedin.com/in/andrew-bahsoun-4b3a901a2/">Andrew Bahsoun</a>
+        </p>
+        <p>
+            GitHub: <a href="https://github.com/andrewbahsoun>">andrewbahsoun</a>
+        </p>
+        <p>
+            Instagram: <a href="https://www.instagram.com/andrewbahsoun/">@andrewbahsoun</a>
+        </p>
+        
+    </div>
+
+    <!-- Include Three.js and the main script -->
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
