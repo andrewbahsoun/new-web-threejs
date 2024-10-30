@@ -14,9 +14,12 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 document.body.appendChild(renderer.domElement);
 
-// Array to store all cubes, velocities, and parallax objects
+// Array to store all cubes and velocities
 const cubes = [];
 const velocities = [];
+
+// Define parallaxObjects array to avoid undefined errors
+const parallaxObjects = [];
 
 // Raycaster for detecting mouse interaction with cubes
 const raycaster = new THREE.Raycaster();
@@ -25,9 +28,6 @@ let isDragging = false;
 let selectedCube = null;
 let dragOffset = new THREE.Vector3();
 let lastMousePosition = new THREE.Vector2();
-
-// Create a TextureLoader instance
-const textureLoader = new THREE.TextureLoader();
 
 // Function to create a cube with specified size, position, and an optional texture
 function createCube(size = 0.5 + Math.random() * 1.5, position = { x: 0, y: 0, z: 0 }, texture = null) {
@@ -50,16 +50,6 @@ createCube(1.0);
 createCube(1.5, { x: -3, y: 0, z: 0 });
 createCube(2.0, { x: 1, y: -2, z: 0 });
 
-// Function to create parallax 3D objects for background effect
-function createParallaxObject(geometry, color, position) {
-    const material = new THREE.MeshPhongMaterial({ color, opacity: 0.6, transparent: true });
-    const shape = new THREE.Mesh(geometry, material);
-    shape.position.set(position.x, position.y, position.z);
-    scene.add(shape);
-    parallaxObjects.push(shape);
-}
-
-
 // Lighting setup
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
 scene.add(ambientLight);
@@ -78,19 +68,13 @@ document.getElementById('add-cube-button').addEventListener('click', () => {
     createCube(randomSize, randomPosition);
 });
 
-// Track mouse movement
+// Track mouse movement and update raycaster
 window.addEventListener('mousemove', (event) => {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
     // Update raycaster with the mouse position
     raycaster.setFromCamera(mouse, camera);
-
-    // Parallax effect for background objects based on mouse movement
-    parallaxObjects.forEach((object) => {
-        object.rotation.x += mouse.y * 0.01;
-        object.rotation.y += mouse.x * 0.01;
-    });
 
     // If dragging a cube, update its position
     if (isDragging && selectedCube) {
@@ -100,11 +84,12 @@ window.addEventListener('mousemove', (event) => {
             selectedCube.position.copy(intersectPoint.sub(dragOffset));
 
             // Calculate velocity based on mouse movement during drag
-            velocities[cubes.indexOf(selectedCube)].set(
+            const cubeIndex = cubes.indexOf(selectedCube);
+            velocities[cubeIndex].set(
                 mouse.x - lastMousePosition.x,
                 mouse.y - lastMousePosition.y,
                 0
-            ).multiplyScalar(5);
+            ).multiplyScalar(5); // Adjust multiplier to control momentum strength
         }
     }
 

@@ -195,78 +195,77 @@ canvas {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 4px;
 }
-
-/* Project card styling */
+/* Project Card Container */
 .project-card {
-    width: 200px; /* Set width for each card */
-    height: 300px; /* Set height for each card */
-    background-color: rgba(255, 255, 255, 0.3);
+    width: 200px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.3); /* Translucent background */
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Hide inner overflow */
-    flex-shrink: 0; /* Prevent cards from shrinking */
-    transition: transform 0.6s ease; /* Smooth transition for 3D flip */
-    transform-style: preserve-3d; /* Necessary for 3D effect */
-    scroll-snap-align: center; /* Align each card to the center when scrolling */
+    overflow: hidden; /* Ensure no overflow from inner content */
+    flex-shrink: 0; /* Keep cards from shrinking in container */
+    transition: transform 0.6s ease; /* Smooth flip animation */
+    transform-style: preserve-3d; /* Required for 3D rotation */
+    scroll-snap-align: center; /* Center cards on scroll */
 }
 
-/* Inner container for 3D rotation */
+/* Inner Container for 3D Rotation */
 .card-inner {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px;
+    position: relative; /* Ensure back and front overlap */
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Hides the back when rotated */
-    transition: transform 0.6s ease; /* Smooth transition */
+    transition: transform 0.6s ease;
     transform-style: preserve-3d;
-    position: relative;
+    backface-visibility: hidden; /* Hides back face on flip */
 }
 
-/* Front and back faces of the card */
+/* 3D Flip on Hover */
+.project-card:hover .card-inner {
+    transform: rotateY(180deg); /* Triggers the flip */
+}
+
+/* Front and Back Face Styling */
 .card-front, .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    align-items: flex-start; /* Align text to the left */
+    padding: 10px;
+    color: #333; /* Default text color */
+    backface-visibility: hidden; /* Hides the back face */
 }
 
-/* Front face styling */
+/* Specific Styles for the Front */
 .card-front {
-    background-color: #ffffff; /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.3); /* Translucent front */
+}
+
+/* Specific Styles for the Back */
+.card-back {
+    background-color: rgba(255, 255, 255, 0.3); /* Translucent back */
+    transform: rotateY(180deg); /* Rotate to back for flip */
+}
+
+/* Text Styling for Headings and Paragraphs on Both Faces */
+.card-front h3, .card-back h3, .card-back h4 {
+    font-size: 1.2rem; /* Smaller headings */
+    margin: 10px 0;
+    text-align: left;
+}
+
+.card-front p, .card-back p {
+    font-size: 0.9rem; /* Smaller paragraphs */
+    margin: 5px 0;
     color: #333;
 }
 
-/* Back face styling */
-.card-back {
-    transform: rotateY(180deg); /* Rotate the back face to align with flip */
-    background-color: #f0f0f0; /* Adjust as needed */
-    color: #555;
-}
-
-/* 3D flip effect on hover */
-.project-card:hover .card-inner {
-    transform: rotateY(180deg); /* 3D flip */
-}
-
-/* Optional: Slight zoom effect on hover */
-.project-card:hover {
-    transform: scale(1.05);
-}
-.card-inner h3 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: rgb(20, 20, 20); /* Darker color for contrast on the translucent background */
-}
 
 
 
