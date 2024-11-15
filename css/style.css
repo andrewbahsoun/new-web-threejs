@@ -10,7 +10,7 @@
     font-weight: bold;
 }
 
-/* p li ul */
+/* p li ul, a */
 .section p, li, ul{
     font-size: 20px;
     color: rgb(50, 50, 50);
