@@ -14,7 +14,7 @@
 .section p, li, ul{
     font-size: 20px;
     color: rgb(50, 50, 50);
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
     text-align: left;
     line-height: 1.6;
