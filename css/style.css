@@ -366,47 +366,34 @@ h2 {
 /* Mobile support */
 
 @media (max-width: 768px) {
-    /* Adjust project cards to stack vertically */
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-        overflow-x: visible;
-        scroll-snap-type: none;
-        perspective: none;
-    }
-
-    /* Adjust project card dimensions */
     .project-card {
         width: 100%;
         max-width: 400px;
         margin-bottom: 20px;
         flex-shrink: 0;
+        transform: none;
         scroll-snap-align: none;
-        transform: none;
+        height: auto; /* Allow height to adjust based on content */
+        overflow: visible; /* Ensure overflow is visible */
     }
 
-    /* Disable the hover flip effect on mobile */
-    .project-card:hover .card-inner {
-        transform: none;
-    }
-
-    /* Adjust the card inner container */
     .card-inner {
         transform: none;
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: auto;
+        height: auto; /* Allow height to adjust */
+        overflow: visible; /* Ensure overflow is visible */
     }
 
-    /* Adjust the front and back faces */
     .card-front, .card-back {
         position: relative;
         width: 100%;
-        height: auto;
+        height: auto; /* Allow height to adjust based on content */
         backface-visibility: visible;
         transform: none;
         padding: 0;
+        flex-grow: 1; /* Allow sections to grow */
     }
 
     /* Show both front and back content */
@@ -414,7 +401,7 @@ h2 {
         display: block;
     }
 
-    /* Hide the 'More Details' heading if desired */
+    /* Hide 'More Details' heading if desired */
     .card-back h4 {
         display: none;
     }
@@ -422,6 +409,7 @@ h2 {
     /* Image Styling */
     .card-front img {
         width: 100%;
+        max-width: 100%;
         height: auto;
         object-fit: cover;
         border-radius: 8px;
@@ -434,12 +422,6 @@ h2 {
         padding: 0 10px;
     }
 
-    /* Remove padding from card-front */
-    .card-front {
-        padding: 0;
-    }
-
-    /* Optional: Adjust font sizes */
     .card-front h3 {
         font-size: 1.5rem;
         margin: 10px 0;
