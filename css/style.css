@@ -4,11 +4,32 @@
 .section h2 {
     font-size: 2.5rem;
     margin: 0;
-    padding-bottom: 0.5rem;
     color: rgb(20, 20, 20);
     text-align: left;
     font-weight: bold;
 }
+
+.section h3 {
+    font-size: 30px; /* Keep this for styling */
+    margin: 0; /* Reset any default margins */
+    color: rgb(20, 20, 20);
+    text-align: left; /* Ensure text alignment is set */
+    font-weight: bold;
+}
+
+#bio h3 {
+    font-size: 30px; /* Keep this for styling */
+    margin: 0; /* Reset any default margins */
+    color: rgb(28, 8, 115);
+    text-align: left; /* Ensure text alignment is set */
+    font-weight: bold;
+}
+.h3-wrapper {
+    text-align: left; /* Align all child text to the left */
+    width: 45%; /* Ensure the wrapper spans full width */
+    margin: 10px;
+}
+
 
 /* p li ul, a */
 .section p, li, ul{
@@ -72,7 +93,7 @@ canvas {
     position: relative;
     z-index: 1;
     padding-top: 20vh;
-    padding: 20px;
+    padding: 0 20px;
     backdrop-filter: blur(1px); /* Blur effect */
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -88,10 +109,10 @@ canvas {
     background: linear-gradient(to bottom, rgba(130, 190, 220, 0.8), rgba(110, 180, 210, 0.8));
 }
 
-.about-me h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 2rem;
+h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 40px;
     color: #333;
 }
 
@@ -340,4 +361,71 @@ canvas {
     pointer-events: none; /* Prevents mouse interactions with the image */
     user-select: none; /* Prevents the image from being selected */
 
+}
+
+/* Mobile support */
+
+@media (max-width: 768px) {
+    /* Reduce font sizes for smaller screens */
+    .section {
+        font-size: 30px; /* Reduce overall font size */
+        height: auto; /* Allow sections to adjust height based on content */
+        padding-top: 5vh; /* Adjust top padding */
+    }
+
+    .section h2 {
+        font-size: 1.5rem; /* Reduce h2 font size */
+    }
+
+    .section h3 {
+        font-size: 1.2rem; /* Reduce h3 font size */
+    }
+
+    .section p, li, ul {
+        font-size: 16px; /* Reduce paragraph font size */
+    }
+
+    /* Expand h3-wrapper to full width */
+    .h3-wrapper {
+        width: 100%;
+    }
+
+    /* Make the bio image responsive */
+    .bio-image {
+        position: relative; /* Remove absolute positioning */
+        width: 100%; /* Image fills the width of its container */
+        max-width: 100%;
+        left: 0;
+        top: 0;
+        margin: 20px 0; /* Add some vertical margin */
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr; /* Stack items vertically */
+    }
+
+    .about-image {
+        height: auto; /* Allow image height to adjust */
+    }
+
+    .projects-container {
+        flex-direction: column; /* Stack project cards */
+        align-items: center;
+    }
+
+    .project-card {
+        width: 100%; /* Full width */
+        max-width: 300px;
+        margin-bottom: 20px; /* Space between cards */
+    }
+
+    #add-cube-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
 }

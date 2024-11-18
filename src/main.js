@@ -157,7 +157,7 @@ window.addEventListener('scroll', () => {
     requestAnimationFrame(updateCubesTransform);
 });
 
-// Render loop with momentum application
+
 function animate() {
     applyMomentum();
     renderer.render(scene, camera);
