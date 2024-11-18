@@ -18,7 +18,7 @@
 }
 
 #bio h3 {
-    font-size: 30px; /* Keep this for styling */
+    font-size: 20px; /* Keep this for styling */
     margin: 0; /* Reset any default margins */
     color: rgb(28, 8, 115);
     text-align: left; /* Ensure text alignment is set */
@@ -33,7 +33,7 @@
 
 /* p li ul, a */
 .section p, li, ul{
-    font-size: 20px;
+    font-size: 15px;
     color: rgb(50, 50, 50);
     max-width: 750px;
     margin: 0 auto;
