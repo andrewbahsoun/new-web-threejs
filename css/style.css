@@ -364,109 +364,104 @@ h2 {
 }
 
 /* Mobile support */
-
 @media (max-width: 768px) {
+    /* Project Card */
     .project-card {
         width: 100%;
-        max-width: 400px;
-        margin-bottom: 20px;
-        flex-shrink: 0;
-        transform: none;
-        scroll-snap-align: none;
+        max-width: 400px; /* Ensure cards don't get too wide */
+        margin-bottom: 20px; /* Add space between cards */
         height: auto; /* Allow height to adjust based on content */
-        overflow: visible; /* Ensure overflow is visible */
+        overflow: visible; /* Ensure content is visible */
+        transform: none; /* Disable flip effect */
     }
 
+    /* Inner Card Layout */
     .card-inner {
-        transform: none;
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Stack content vertically */
         width: 100%;
         height: auto; /* Allow height to adjust */
-        overflow: visible; /* Ensure overflow is visible */
+        transform: none; /* Disable flip effect */
+        overflow: visible; /* Ensure content is visible */
     }
 
+    /* Front and Back Sections */
     .card-front, .card-back {
-        position: relative;
+        position: relative; /* Keep normal flow */
         width: 100%;
-        height: auto; /* Allow height to adjust based on content */
-        backface-visibility: visible;
-        transform: none;
-        padding: 0;
-        flex-grow: 1; /* Allow sections to grow */
+        height: auto; /* Adjust height based on content */
+        padding: 0; /* Remove unnecessary padding */
     }
 
     /* Show both front and back content */
     .card-back {
-        display: block;
+        display: block; /* Ensure back content is visible */
     }
 
-    /* Hide 'More Details' heading if desired */
+    /* Optional: Hide specific elements like headings */
     .card-back h4 {
-        display: none;
+        display: none; /* Hide 'More Details' heading */
     }
 
     /* Image Styling */
     .card-front img {
         width: 100%;
-        max-width: 100%;
         height: auto;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-bottom: 10px;
+        object-fit: cover; /* Maintain aspect ratio */
+        border-radius: 8px; /* Add rounded corners */
+        margin-bottom: 10px; /* Add spacing below image */
     }
 
     /* Text Styling */
     .card-front h3, .card-back p {
-        text-align: left;
-        padding: 0 10px;
+        text-align: left; /* Align text to the left */
+        padding: 0 10px; /* Add padding for spacing */
     }
 
     .card-front h3 {
-        font-size: 1.5rem;
-        margin: 10px 0;
+        font-size: 1.5rem; /* Adjust font size for headings */
+        margin: 10px 0; /* Add spacing above and below */
     }
 
     .card-back p {
-        font-size: 1rem;
-        margin-top: 10px;
-        line-height: 1.6;
+        font-size: 1rem; /* Adjust font size for paragraphs */
+        margin-top: 10px; /* Add spacing above */
+        line-height: 1.6; /* Improve readability */
     }
 
-    /* Reduce font sizes for smaller screens */
+    /* General Section Adjustments */
     .section {
-        font-size: 30px; /* Reduce overall font size */
+        font-size: 30px; /* Adjust overall font size */
         height: auto; /* Allow sections to adjust height based on content */
-        padding-top: 5vh; /* Adjust top padding */
+        padding-top: 5vh; /* Add padding to the top */
     }
 
     .section h2 {
-        font-size: 1.5rem; /* Reduce h2 font size */
+        font-size: 1.5rem; /* Adjust heading size */
     }
 
     .section h3 {
-        font-size: 1.2rem; /* Reduce h3 font size */
+        font-size: 1.2rem; /* Adjust subheading size */
     }
 
     .section p, li, ul {
-        font-size: 16px; /* Reduce paragraph font size */
+        font-size: 16px; /* Adjust paragraph font size */
     }
 
-    /* Expand h3-wrapper to full width */
+    /* Responsive Wrapper Adjustments */
     .h3-wrapper {
-        width: 100%;
+        width: 100%; /* Ensure wrapper spans full width */
     }
 
-    /* Make the bio image responsive */
+    /* Responsive Bio Image */
     .bio-image {
         position: relative; /* Remove absolute positioning */
-        width: 100%; /* Image fills the width of its container */
-        max-width: 100%;
-        left: 0;
-        top: 0;
-        margin: 20px 0; /* Add some vertical margin */
+        width: 100%; /* Make image responsive */
+        max-width: 100%; /* Constrain width */
+        margin: 20px 0; /* Add vertical margin */
     }
 
+    /* About Section Adjustments */
     .about-grid {
         grid-template-columns: 1fr; /* Stack items vertically */
     }
@@ -475,24 +470,27 @@ h2 {
         height: auto; /* Allow image height to adjust */
     }
 
+    /* Projects Section Adjustments */
     .projects-container {
+        display: flex;
         flex-direction: column; /* Stack project cards */
-        align-items: center;
+        align-items: center; /* Center align cards */
     }
 
     .project-card {
         width: 100%; /* Full width */
-        max-width: 300px;
-        margin-bottom: 20px; /* Space between cards */
+        max-width: 300px; /* Limit width */
+        margin-bottom: 20px; /* Add spacing between cards */
     }
 
+    /* Button and Canvas Adjustments */
     #add-cube-button {
         font-size: 14px;
         padding: 8px 16px;
     }
 
     canvas {
-        width: 100%;
-        height: auto;
+        width: 100%; /* Ensure canvas fits width */
+        height: auto; /* Allow height to adjust */
     }
 }
