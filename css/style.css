@@ -366,6 +366,81 @@ h2 {
 /* Mobile support */
 
 @media (max-width: 768px) {
+    /* Adjust the projects wrapper to take full width on mobile */
+.projects-wrapper {
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+/* Adjust the projects container for vertical layout */
+.projects-container {
+    flex-direction: column; /* Stack project cards vertically */
+    align-items: center;    /* Center the cards horizontally */
+    overflow-x: visible;    /* Remove horizontal scrolling */
+    scroll-snap-type: none; /* Disable snap scrolling */
+    perspective: none;      /* Remove 3D perspective */
+}
+
+/* Adjust the project cards to fit mobile screens */
+.project-card {
+    width: 100%;
+    max-width: 400px;     /* Set a reasonable max-width */
+    margin-bottom: 20px;  /* Space between cards */
+    flex-shrink: 0;       /* Prevent cards from shrinking */
+    transform: none;      /* Reset transform to prevent issues */
+    scroll-snap-align: none; /* Disable snap alignment */
+}
+
+/* Ensure the card-inner takes full width */
+.card-inner {
+    width: 100%;
+    height: auto;
+    transform: none;        /* Disable transformations on mobile */
+}
+
+/* Disable the hover flip effect on mobile */
+.project-card:hover .card-inner {
+    transform: none;
+}
+
+/* Adjust the front and back faces */
+.card-front, .card-back {
+    position: relative;     /* Change to relative for stacking */
+    width: 100%;
+    height: auto;
+    backface-visibility: visible; /* Show backface since we're disabling flip */
+    transform: none;              /* Remove any transformations */
+    padding: 20px;                /* Add padding for content */
+}
+
+/* Hide the back face on mobile */
+.card-back {
+    display: none; /* Hide the back face since flip is disabled */
+}
+
+/* Adjust images inside the cards */
+.card-front img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Adjust headings and paragraphs */
+.card-front h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.card-front p {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    padding: 0 10px;
+}
+
     /* Reduce font sizes for smaller screens */
     .section {
         font-size: 30px; /* Reduce overall font size */
