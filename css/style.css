@@ -355,7 +355,7 @@ h2 {
     position: absolute; /* Allows flexible positioning */
     top: 20px; /* Adjust top position */
     left: 80px; /* Adjust right position */
-    width: 350px; /* Adjust size as needed */
+    width: 300px; /* Adjust size as needed */
     height: auto;
     opacity: 0.9; /* Adjust for desired translucency (0.0 to 1.0) */
     pointer-events: none; /* Prevents mouse interactions with the image */
